@@ -1,0 +1,14 @@
+ssh_authorized_keys:
+- ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMmaaD+wP48UR+8pUIFoUuvm/ZaB9KIYAlBVxOajTu5Q ariandel
+hostname: k3s-server
+k3os:
+  dns_nameservers:
+  - 10.1.1.1
+  ntp_servers:
+  - 0.hu.pool.ntp.org
+  - 1.hu.pool.ntp.org
+  server_url: https://k3s-server:6443
+  k3s_args:
+  - server
+  - "--cluster-cidr=10.1.100.0/24"
+  - "--service-cidr=10.1.101.0/24"
